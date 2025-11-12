@@ -1,0 +1,7 @@
+{
+  "name": "LingoLeap AIml",
+  "description": "An AI-powered platform to help students and migrants learn and practice regional local languages, covering Listening, Speaking, Reading, and Writing modules with gamified lessons and real-time feedback.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LingoLeap AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Custom Font */
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      
+      /* For custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f5f9; /* slate-100 */
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1; /* slate-300 */
+        border-radius: 5px;
+        border: 2px solid #f1f5f9;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8; /* slate-400 */
+      }
+      
+      /* For animated background */
+      @keyframes gradient-animation {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      .bg-animated {
+        background: linear-gradient(-45deg, #f0f9ff, #e0f2fe, #bae6fd, #f0f9ff);
+        background-size: 400% 400%;
+        animation: gradient-animation 25s ease infinite;
+      }
+      
+      /* For pronunciation button idle pulse */
+      @keyframes pulse-slow {
+        0%, 100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 0.7;
+            transform: scale(1.05);
+        }
+      }
+      .animate-pulse-slow {
+        animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+      
+      /* For pulsing glow on active lesson node */
+      @keyframes pulse-glow {
+        0%, 100% {
+          box-shadow: 0 0 20px 0px rgba(2, 132, 199, 0.4); /* sky-600 */
+        }
+        50% {
+          box-shadow: 0 0 35px 8px rgba(2, 132, 199, 0);
+        }
+      }
+      .animate-pulse-glow {
+        animation: pulse-glow 3s linear infinite;
+      }
+
+      /* For shake animation on incorrect answer */
+      @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+        20%, 40%, 60%, 80% { transform: translateX(5px); }
+      }
+      .animate-shake {
+        animation: shake 0.5s ease-in-out;
+      }
+
+      /* For survey modal animation */
+      @keyframes fade-in-up {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+      }
+      .animate-fade-in-up {
+          animation: fade-in-up 0.5s ease-out forwards;
+      }
+
+      /* For pulsing streak glow */
+      @keyframes pulse-fire {
+        0%, 100% {
+          filter: drop-shadow(0 0 8px rgba(251, 146, 60, 0.3)); /* orange-400 */
+        }
+        50% {
+          filter: drop-shadow(0 0 16px rgba(251, 146, 60, 0));
+        }
+      }
+      .animate-pulse-fire {
+        animation: pulse-fire 2.5s linear infinite;
+      }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.29.0",
+    "marked": "https://aistudiocdn.com/marked@^17.0.0"
+  }
+}
+</script>
+</head>
+<body class="text-slate-800 antialiased bg-animated">
+    <div id="root"></div>
+</body>
+</html>
